@@ -1,0 +1,148 @@
+			id
+			name
+			weight
+			price
+			image
+			category_id
+
+
+
+
+Welpen ->					Food ->
+  rase						  count
+  height					  foodType
+  characteristic				  object_id
+  color
+
+<---------------------------------------------------------->
+
+
+  INSERT INTO CATEGORY (CATEGORY_NAME) VALUES ('welpen'), ('food');
+-----------------------------------------------------------------------
+
+
+ALTER TABLE Product_object ALTER COLUMN id RESTART WITH 1;
+
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[  'Vigorous',  'Friendly', 'Loyal', 'Playful' ], 'brown-white', 1, 0, 'NONE', 35,  '/assets/images/welps/1.jpg', 'Welp', '',  215.99,1, 6.00, 1);
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ('SAINT BERNARD', 1);  
+   
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[  'Calm',  'Protective', 'Social',  'Fearful', 'Friendly'], 'bright', 1, 0, 'NONE', 22, '/assets/images/welps/2.jpg', 'Welp', '', 199.99, 2, 3.50, 1 );
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ('BULLDOG', 2);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[  'Playful',   'Social', 'Friendly',  'Vigorous' ],  'brown-white', 1, 0, 'NONE', 32,  '/assets/images/welps/3.jpg', 'Welp','', 500.00,3,  5.00, 1);
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ( 'CAVLALIER_KING CHARLES SPANIEL', 3);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[  'Calm',  'Fearful', 'Friendly', 'Reasonable', 'Social' ], 'bright/gray', 1, 0, 'NONE', 12,  '/assets/images/welps/4.jpg', 'Welp', '', 150.00, 4,  2.00, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ( 'BICHON FRISE', 4);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[  'Vigorous',  'Friendly', 'Reasonable', 'Loyal', 'Playful', 'Protective' ],  'brown-white', 1, 0, 'NONE', 36,  '/assets/images/welps/5.jpg', 'Welp', '', 400.00, 5,  4.00, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ('CAVLALIER KING CHARLES SPANIEL', 5);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[  'Vigorous',  'Friendly',  'Loyal', 'Playful', 'Protective' ], 'bright/dark', 1, 0, 'NONE', 28,  '/assets/images/welps/6.jpg', 'Welp', '', 350.00,6, 3.00, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ('DOBERMAN', 6);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'Reasonable', 'Loyal',  'Protective', 'Social',  'Friendly' ], 'dark-gray', 1, 0, 'NONE', 36,  '/assets/images/welps/7.jpg', 'Welp', '', 480.00, 7,  5.00, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ( 'BORDER COLLIE',  7);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[ 'Aggressive', 'Independent', 'Reasonable', 'Protective', 'Loyal' ], 'dark-brown', 1, 0, 'NONE', 25,  '/assets/images/welps/braune.jpg', 'Welp', '', 300.00, 8, 4.00, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ( 'GREAT DANE', 8);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (   Array[ 'Aggressive','Independent', 'Loyal', 'Protective', 'Social' ], 'black-brown', 1, 0, 'NONE', 31, '/assets/images/welps/hundrotti.gif', 'Welp', '', 280.00, 9, 5.50, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ( 'ROTWEILER', 9);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'Aggressive',  'Vigorous',  'Friendly', 'Reasonable','Protective'], 'bright', 1, 0, 'NONE', 24,  '/assets/images/welps/pummel.jpg', 'Welp', '', 310.00, 10, 3.00, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ( 'AUSTRALIAN SHEPHARD',10);
+
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[ 'Aggressive', 'Independent', 'Reasonable', 'Protective', 'Loyal' ], 'black-brown', 1, 0, 'NONE', 33, '/assets/images/welps/rottweiler.jpg', 'Welp', '',415.00, 11, 3.80, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ( 'ROTWEILER', 11);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'Aggressive',  'Vigorous', 'Fearful',  'Playful'],'black-brown', 1, 0, 'NONE', 15,  '/assets/images/welps/schwarz.jpg', 'Welp', '', 200.00, 12, 2.00, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ('BICHON FRISE', 12);
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'Aggressive', 'Vigorous', 'Reasonable', 'Loyal', 'Playful', 'Protective' ],'dark-gray', 1, 0, 'NONE', 24,  '/assets/images/welps/welp.jpg', 'Welp', '', 350.00, 13, 4.80, 1); 
+INSERT INTO Bread(race, product_object_fk)
+  VALUES ('AUSTRALIAN SHEPHARD', 13);
+__________________________________________________________________________________________________________________________________________________________________
+
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'None'],'', 32, 1, 'PRODUCTION', 14,  '/assets/images/food/korm.jpg', 'Food', 'Viva', 22.99, 0, 1, 2); 
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (   Array[ 'None'],'', 2, 2, 'MEAT', 15, '/assets/images/food/cow.jfif', 'Food', 'Beef',15.00, 0, 10, 2); 
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[ 'None'],'', 15, 3, 'CANNED', 0,  '/assets/images/food/caeser.jpg', 'Food', 'Caser', 13.70, 0, 0.5, 2); 
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'None'],'', 10, 4, 'CANNED', 0,  '/assets/images/food/dose_bestpet.jpg', 'Food', 'Bestpet', 10.20, 0, 0.8, 2); 
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'None'],'', 15, 5, 'LIQUID_FOOD', 0, '/assets/images/food/liquidroyalCanin.jpg', 'Food',  'Royal canin',12.70, 0, 0, 2); 
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (   Array[ 'None'],'', 300, 6, 'VITAMINS', 0, '/assets/images/food/multi-vitamins.jpg', 'Food', 'Multi-Vitamin', 6.99, 0, 0, 2); 
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES ( Array[ 'None'],'', 40, 7, 'VITAMINS', 40,  '/assets/images/food/reavet_immunvital.jpg', 'Food',  'Multi-vitamin', 8.00, 0, 0, 2); 
+
+INSERT INTO Product_Object(characteristic, color, count, food_id, food_type, height,  image, name, object_name, price, puppy_id, weight, category_id)
+  VALUES (  Array[ 'None'],'', 14, 8, 'VITAMINS', 14,  '/assets/images/food/vitamin_d.jpg', 'Food',  'Vitamin_d', 2.99, 0, 0, 2);
+
+
+
+Enum Array:
+ALTER TABLE product_object ADD COLUMN characteristic ENUM( 'Aggressive', 'Calm', 'Curious', Vigorous', 'Fearful', 'Friendly', 
+    'Independent', 'Reasonable', 'Loyal', 'None', 'Playful', 
+    'Protective', 'Sozial') ARRAY;
+
+
+SEPARETE:
+INSERT INTO Bread(race, product_object_fk)
+VALUES ('SAINT BERNARD', 1),
+('BULLDOG', 2),
+( 'CAVLALIER_KING CHARLES SPANIEL', 3),
+( 'BICHON FRISE', 4),
+('CAVLALIER KING CHARLES SPANIEL', 5),
+('DOBERMAN', 6),
+( 'BORDER COLLIE',  7),
+( 'GREAT DANE', 8),
+( 'ROTWEILER', 9),
+( 'AUSTRALIAN SHEPHARD',10),
+( 'ROTWEILER', 11),
+('BICHON FRISE', 12),
+('AUSTRALIAN SHEPHARD', 13);
+  
+    
+
+
+
+
+ 
