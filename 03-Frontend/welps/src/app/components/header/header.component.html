@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand zentrum" style="background-color: #e3f2fd;">
+    <div class="container">
+        <a class="navbar-brand" href="#">Welps</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navigator">
+                <li class="nav-item ">
+                    <a class="nav-link active "  href="#">Start</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Galerie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" routerLink="/admin">Über uns</a>
+                </li>                                   
+            </ul>
+            <!-- S E A R C H -->
+            <form class="d-flex search-form" role="search">
+                <div class="form-control">
+                    <select class="form-select no-border schrift" [(ngModel)]="searchCategory" name="searchCategory" style="max-width: 150px;" placeholder="Category">
+                        <option  value="" disabled selected>category</option>
+                        <option [selected]="searchCategory==='Welpen'" value="Welpen">Welpen</option>
+                        <option [selected]="searchCategory==='Nahrung'" value="Nahrung">Nahrung</option>
+                    </select>
+                    <input class="form-control me-2 no-border schrift"  [(ngModel)]="searchQuery" name="searchQuery" placeholder="Suche..." (keyup.enter)="doSearch()"  type="text" placeholder="Suche" aria-label="Suche">
+                    
+                </div>
+                <button class="btn btn-outline-success"  (click)="doSearch()" type="submit">Suche</button>
+            </form>
+        </div>
+    </div>
+</nav> 

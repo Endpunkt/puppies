@@ -1,0 +1,5 @@
+# Created at 2025-08-09T15:52:03.509
+Boot Manifest-JAR contains absolute paths in classpath 'E:\Fullstack\welpen\02-Backend\Puppies\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

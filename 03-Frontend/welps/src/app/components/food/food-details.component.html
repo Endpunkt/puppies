@@ -1,0 +1,21 @@
+<div class="food-container py-4">
+    <div class="container mt-4">
+        <div class="reihe">
+          <div class="col-md-6">
+            <img [src]="food.image" alt="Food Image" class="puppy-image img-fluid">
+          </div>
+          <div class="col-md-6 mitte">
+            <h2>{{ food.objectName }}</h2>
+            <p>Nahrungsart: {{ food.foodType }}</p>
+            <p>Anzahl: {{ food.count}}</p>
+            <p>Preis: {{ food.price | currency:'EUR':'symbol' }}</p>
+          </div>
+        </div>
+       
+        <div class="puppy-navigation-arrows distanz">
+            <a [routerLink]="['/food', prevId]"><i class="fas fa-arrow-left fa-5x"></i></a>
+            <a [routerLink]="['/food', nextId]"><i class="fas fa-arrow-right fa-5x"></i></a>
+        </div>
+        </div>
+      
+</div>

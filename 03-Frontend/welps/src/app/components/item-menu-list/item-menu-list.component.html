@@ -1,0 +1,50 @@
+
+<div class="content-container">
+    <div class="dieListe">
+     <div *ngIf="puppies && puppies.length > 0" class="einordnung">
+            <div class="product-container flex-grow-1  row-cols" *ngFor = "let tempPuppy of puppies">
+                <a class="item-link" routerLink="/puppies/{{tempPuppy.puppyId}}">
+                <div class="product-item ">
+                    <div class="h4-anpassung">{{ tempPuppy.race?.race }} </div>
+                    <img src="{{tempPuppy.image}}"  alt="1">
+                    <hr>
+                    <div class="galerie-detail">
+
+                        <p>Gewicht: {{tempPuppy.weight}}</p>
+                        <p>Größe: {{tempPuppy.height}}</p>
+                        <p>Preis: {{tempPuppy.price}}</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="foods && foods.length > 0" class="einordnung">
+            <div class="product-container flex-grow-1  row-cols" *ngFor = "let tempFood of foods">
+                <a class="item-link" routerLink="/foods/{{tempFood.foodId}}">
+                    <div class="product-item ">
+                        <div class="h4-anpassung">{{ tempFood.objectName }}</div>
+                        <img src="{{tempFood.image}}"  alt="1">
+                    
+                        <hr>
+                        <div class="galerie-detail">
+                            <p>Nahrungsart: {{tempFood.foodType}}</p>
+                            <p>Anzahl im Lage: {{tempFood.count}}</p>
+                            <p>Preis: {{tempFood.price}}</p>
+                        </div>
+                    </div>  
+                </a>
+            </div>   
+        </div>
+    </div>
+</div>
+<div class="paginator-container">
+    <mat-paginator [length]="length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="pageMove($event)"
+    aria-label="Select page" aria-label="Select page"></mat-paginator>
+</div>
+
+            <!-- Weitere Produkte -->
+        
+

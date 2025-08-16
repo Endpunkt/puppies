@@ -1,0 +1,31 @@
+INSERT INTO CATEGORIES (CATEGORY_NAME) VALUES ('welpen'), ('food');
+
+INSERT INTO Welpen (characteristic, color, height, image, price, rase, weight, category_id)
+VALUES
+    (Array[  'ENERGETIG',  'FRIENDLY', 'LOYALITY', 'PLAYFULNESS' ], 'brown-white', 35, 'assets/images/welps/1.jpg', 215.99, 'SAINT_BERNARD', 6.00, 1),
+    (Array[  'CALM',  'PROTECTIVE', 'SOZIAL',  'FEARFUL', 'FRIENDLY '], 'bright', 22, 'assets/images/welps/2.jpg', 199.99, 'BULLDOG', 3.50, 1),
+    (Array[  'PLAYFULNESS',   'SOZIAL', 'FRIENDLY',  'ENERGETIG' ], 'brown-white', 32, 'assets/images/welps/3.jpg', 500.00, 'CAVLALIER_KING_CHARLES_SPANIEL', 5.00, 1),
+    (Array[  'CALM',  'FEARFUL', 'FRIENDLY', 'INTELLIGENCE', 'SOZIAL' ], 'bright/gray', 12, 'assets/images/welps/4.jpg', 150.00, 'BICHON_FRISE', 2.00, 1),
+    (Array[  'ENERGETIG',  'FRIENDLY', 'INTELLIGENCE', 'LOYALITY', 'PLAYFULNESS', 'PROTECTIVE' ], 'brown-white', 36, 'assets/images/welps/5.jpg', 400.00, 'CAVLALIER_KING_CHARLES_SPANIEL', 4.00, 1),
+    (Array[  'ENERGETIG',  'FRIENDLY',  'LOYALITY', 'PLAYFULNESS', 'PROTECTIVE' ], 'bright/dark', 28, 'assets/images/welps/6.jpg', 350.00, 'DOBERMAN', 3.00, 1),
+    (Array[ 'INTELLIGENCE', 'LOYALITY',  'PROTECTIVE', 'SOZIAL',  'FRIENDLY' ], 'dark-gray', 28, 'assets/images/welps/7.jpg', 480.00, 'BORDER_COLLIE', 5.00, 1),
+    (Array[ 'AGGRESSIVENESS', 'INDEPENDENCE', 'INTELLIGENCE', 'PROTECTIVE', 'LOYALITY' ], 'dark-brown', 25, 'assets/images/welps/braune.jpg', 300.00, 'GREAT_DANE', 4.00, 1),
+    (Array[ 'AGGRESSIVENESS','INDEPENDENCE', 'LOYALITY', 'PROTECTIVE', 'SOZIAL' ], 'black-brown', 31, 'assets/images/welps/hundrotti.gif', 280.00, 'ROTWEILER', 5.50, 1),
+    (Array[ 'AGGRESSIVENESS',  'ENERGETIG',  'FRIENDLY', 'INTELLIGENCE','PROTECTIVE'], 'bright', 24, 'assets/images/welps/pummel.jpg', 310.00, 'AUSTRALIAN_SHEPHARD', 3.00, 1),
+    (Array[ 'AGGRESSIVENESS', 'INDEPENDENCE', 'INTELLIGENCE', 'PROTECTIVE', 'LOYALITY' ], 'black-brown', 33, 'assets/imags/welps/rottweiler.jpg', 415.00 ,'ROTWEILER', 3.80, 1),
+    (Array[ 'AGGRESSIVENESS',  'ENERGETIG', 'FEARFUL',  'PLAYFULNESS'], 'black', 15, 'assets/images/welps/schwarz.jpg',200.00 , 'BICHON_FRISE', 2.00, 1),
+    (Array[ 'AGGRESSIVENESS', 'ENERGETIG', 'INTELLIGENCE', 'LOYALITY', 'PLAYFULNESS', 'PROTECTIVE' ], 'dark-gray', 24, 'assets/images/welps/welp.jpg', 350.00, 'AUSTRALIAN_SHEPHARD', 4.80, 1); 
+
+INSERT INTO food(count, food_name, food_type, image, price, category_id)
+VALUES 
+	(32, 'Viva', 'PRODUCTION', 'assets/images/food/korm.jpg', 22.99, 2),
+	(2, 'Beef', 'MEAT', 'assets/images/food/cow.jfif', 15.00, 2),
+	(15, 'Caser', 'CANNED', 'assets/images/food/caser.jpg', 13.70, 2),
+	(10, 'Bestpet', 'CANNED', 'assets/images/food/dose_bestpet.jpg', 10.20, 2),
+	(45, 'Korm', 'PRODUCTION', 'assets/images/food/korm.jpg', 36.70, 2),
+	(15, 'Royal canin', 'LIQUID_FOOD', 'assets/images/food/liquidroyalCanin.jpg', 12.70, 2),
+	(300, 'Multi-vitamin', 'VITAMINS', 'assets/images/food/multi-vitamins.jpg', 6.99, 2),
+	(40, 'Reavet-immunvital', 'VITAMINS', 'assets/images/food/reavet_immunvital.jpg', 8.00, 2),
+	(14, 'Vitamin_d', 'VITAMINS', 'assets/images/food/vitamin_d.jpg', 2.99, 2);
+
+ALTER TABLE Welpen ALTER COLUMN id RESTART WITH 1;

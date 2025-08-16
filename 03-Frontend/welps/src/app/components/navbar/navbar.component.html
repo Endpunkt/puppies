@@ -1,0 +1,15 @@
+
+
+  <div class="menu-sidebar-content fuelle">
+    <nav class="navibar navbar-light">
+      <ul class="navbar-nav auswahl" >
+        <!--Loop for navbar-->
+
+        <li class="nav-item" *ngFor="let category of categories">
+            <a class="nav-link" routerLink="/category/{{category.id}}"> {{category.categoryName}}</a>
+        </li>
+      </ul>
+    </nav>
+</div>
+
+

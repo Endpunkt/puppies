@@ -1,0 +1,159 @@
+<section>
+    <div class="cont">
+       
+        <h1>Willkomen, Admin</h1>
+            <div class="font-container">
+                 
+                <div class="description">
+                    <h5>Welpen hinzufügen</h5>
+                    <h5>Futter hinzufügen</h5>
+                </div>
+                
+                <div class="form-container">  
+                    <div class="row">
+                        <hr class="divider">
+                        <div class="col">
+                            <div class="arrow" [ngClass]="{ 'rotate-down': formsVisible[0] }" (click)="toggleForm(0)">
+                                &#9654;
+                            </div>
+                            <form   *ngIf="formsVisible[0]" [@slideToggle] #myForm="ngForm" (ngSubmit)="onSubmit()">
+                                <legend>Welpe einfügen:</legend>
+                                <div class="mb-3">
+                                    <label for="height" class="form-label-sm">Höher:</label><br/>
+                                    <input type="text" id="height"  class="form-control-sm" [(ngModel)]="puppy.height" name="height"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="color" class="form-label-sm">Farbe:</label><br/>
+                                    <input type="text" id="color" class="form-control-sm" [(ngModel)]="puppy.color" name="color"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="gewicht" class="form-label-sm">Gewicht:</label><br/>
+                                    <input type="text" id="gewicht" class="form-control-sm" [(ngModel)]="puppy.weight" name="weight"/>
+                                </div>
+                                <div class="checkbox" >
+                                    <div *ngFor="let aCharacter of animalCharacters" class="checkbox">
+                                        <label *ngIf="aCharacter !== 'None'">
+                                            <input 
+                                                type="checkbox" 
+                                                [value]="aCharacter" 
+                                                (change)="onCheckedBox(aCharacter, $event)"
+                                                [checked]="selectedCharacters.includes(aCharacter)">
+                                            {{ aCharacter }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="bread" class="form-label-sm">Bread:</label><br/>
+                                    <input *ngIf="puppy.race" type="text" id="bread" class="form-control-sm" [(ngModel)]="puppy.race.race" name="bread"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="price" class="form-label-sm">Preis:</label><br/>
+                                    <input 
+                                    type="text" 
+                                    id="price" 
+                                    class="form-control-sm" 
+                                    [(ngModel)]="puppy.price" 
+                                    name="price"
+                                    (input)="onPriceInput($event)"  
+                                />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label-sm">Bild hochladen</label>
+                                    <input class="form-control-sm" type="file" id="formFile"  (change)="onFileSelected($event)"/>
+                                </div>
+
+                                <div class="mb-3">
+                                    <button class="btn" >hinzufügen</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="col">
+                        
+                            <div class="arrow" [ngClass]="{ 'rotate-down': formsVisible[1]}" (click)="toggleForm(1)">
+                                &#9654;
+                            </div>
+                            <form action="POST"  *ngIf="formsVisible[1]" [@slideToggle] #myForm="ngForm" >
+                                <legend>Futter einfügen:</legend>
+                                <div class="mb-3">
+                                    <label for="objectName" class="form-label-sm">Höher:</label><br/>
+                                    <input type="text" id="objectName"  class="form-control-sm"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="color" class="form-label-sm">Farbe:</label><br/>
+                                    <select name="options" id="options" class="form-control-sm text-center">
+                                        <option value="value1" >Fleisch</option>
+                                        <option value="value2" >Essensreste</option>
+                                        <option value="value3" >Dosen</option>
+                                        <option value="value3" >Produktion</option>
+                                        <option value="value3" >Vitamine</option>
+                                        <option value="value3" >Kauknochen</option>
+                                        <option value="value3" >Getränke</option>
+                                        <option value="value3" >Flüssige Nahrung</option>
+                                      </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label-sm">Höher:</label><br/>
+                                    <input type="text" id="height" class="form-control-sm" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label-sm">Bild hochladen</label>
+                                    <input class="form-control-sm" type="file" id="formFile">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- 
+        <div class="form-container">
+            <div class="row">
+                <div class="col">
+    
+                    <form action="POST"  #myForm="ngForm" >
+                        <legend>Welpe einfügen:</legend>
+                        <div class="mb-3">
+                            <label for="height" class="form-label-sm">Höher:</label><br/>
+                            <input type="text" id="height"  class="form-control-sm"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="color" class="form-label-sm">Farbe:</label><br/>
+                            <input type="text" id="color" class="form-control-sm"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label-sm">Höher:</label><br/>
+                            <input type="text" id="height" class="form-control-sm" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label-sm">Bild hochladen</label>
+                            <input class="form-control-sm" type="file" id="formFile">
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col">
+                    <form action="POST"  #myForm="ngForm" >
+                        <legend>Futter einfügen:</legend>
+                        <div class="mb-3">
+                            <label for="height" class="form-label-sm">Höher:</label><br/>
+                            <input type="text" id="height"  class="form-control-sm"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="color" class="form-label-sm">Farbe:</label><br/>
+                            <input type="text" id="color" class="form-control-sm"/>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label-sm">Höher:</label><br/>
+                            <input type="text" id="height" class="form-control-sm" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label-sm">Bild hochladen</label>
+                            <input class="form-control-sm" type="file" id="formFile">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</section>

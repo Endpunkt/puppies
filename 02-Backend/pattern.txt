@@ -1,0 +1,85 @@
+			id
+			name
+			weight
+			price
+			image
+			category_id
+
+
+
+
+Welpen ->					Food ->
+  rase						  count
+  height					  foodType
+  characteristic				  object_id
+  color
+
+<---------------------------------------------------------->
+
+
+  INSERT INTO CATEGORY (CATEGORY_NAME) VALUES ('welpen'), ('food');
+-----------------------------------------------------------------------
+
+
+ALTER TABLE Product_object ALTER COLUMN id RESTART WITH 1;
+
+
+
+
+
+Enum Array:
+ALTER TABLE product_object ADD COLUMN characteristic ENUM( 'Aggressive', 'Calm', 'Curious', Vigorous', 'Fearful', 'Friendly', 
+    'Independent', 'Reasonable', 'Loyal', 'None', 'Playful', 
+    'Protective', 'Sozial') ARRAY;
+
+
+SEPARETE:
+
+INSERT INTO CATEGORY(category_name)
+VALUES ('Welpen'),
+('Futter');
+
+
+INSERT INTO Puppy(image, name, price, characteristic, color, height, weight, category_id, race_id)
+VALUES ('/assets/images/welps/1.jpg', 'Lui',  215.99, 'Vigorous,Friendly,Loyal,Playful', 'brown-white', 20.00, 4.00, 1, 1),
+('/assets/images/welps/2.jpg', 'Baldur', 199.00,  'Calm,Protective,Social,Fearful,Friendly', 'bright',  20.00, 3.50, 1, 2  ),
+(  '/assets/images/welps/3.jpg', 'Sony', 500.00,  'Playful,Social,Friendly,Vigorous',  'brown-white', 28.00,  5.00, 1, 3),
+(  '/assets/images/welps/4.jpg', 'Mop', 150.00,  'Calm,Fearful,Friendly,Reasonable,Social', 'bright/gray',  3.50,  6.00, 1, 4),
+(  '/assets/images/welps/5.jpg', 'Stitch', 400.00, 'Vigorous,Friendly,Reasonable,Loyal,Playful,Protective',  'brown-white',  2.50,  3.00, 1, 5 ),
+(  '/assets/images/welps/6.jpg', 'Sam', 350.00, 'Vigorous,Friendly,Loyal,Playful,Protective', 'bright/dark', 60.00, 8.00, 1, 6),
+(  '/assets/images/welps/7.jpg', 'Bob', 480.00, 'Reasonable,Loyal,Protective,Social,Friendly', 'dark-gray', 56.00,  5.00, 1, 7),
+(  '/assets/images/welps/braune.jpg', 'Tot', 300.00, 'Aggressive,Independent,Reasonable,Protective,Loyal', 'dark-brown', 8.00, 5.00, 1, 8),
+(  '/assets/images/welps/hundrotti.gif', 'Blob', 280.00, 'Aggressive,Independent,Loyal,Protective,Social', 'black-brown', 5.00, 4.50, 1, 9),
+(  '/assets/images/welps/pummel.jpg', 'Scharik', 380.00, 'Aggressive,Vigorous,Friendly,Reasonable,Protective', 'bright', 4.50, 3.00, 1, 10),
+(  '/assets/images/welps/rottweiler.jpg', 'Koba', 415.00, 'Aggressive,Independent,Reasonable,Protective,Loyal', 'black-brown',  6.80, 4.80, 1, 11),
+(  '/assets/images/welps/schwarz.jpg', 'Gerk', 350.00, 'Aggressive,Vigorous,Fearful,Playful','black-brown', 5.00, 3.00, 1, 12),
+(  '/assets/images/welps/welp.jpg', 'Tom', 350.00, 'Aggressive,Vigorous,Reasonable,Loyal,Playful,Protective','dark-gray',  8.00, 5.80, 1, 13);
+
+
+INSERT INTO Breed(race)
+VALUES ('SAINT BERNARD'),
+('BULLDOG'),
+( 'CAVLALIER_KING CHARLES SPANIEL'),
+( 'BICHON FRISE'),
+('CAVLALIER KING CHARLES SPANIEL'),
+('DOBERMAN'),
+( 'BORDER COLLIE'),
+( 'GREAT DANE'),
+( 'ROTWEILER'),
+( 'AUSTRALIAN SHEPHARD'),
+( 'ROTWEILER'),
+('BICHON FRISE'),
+('AUSTRALIAN SHEPHARD');
+  
+INSERT INTO Food(image, name, price, count, food_type, category_id)
+  VALUES (   '/assets/images/food/korm.jpg', 'Viva', 22.99, 32, 'PRODUCTION', 2),
+(   '/assets/images/food/cow.jfif', 'Beef', 15.00, 12, 'MEAT', 2),
+(   '/assets/images/food/caeser.jpg', 'Caser', 13.70, 15, 'CANNED', 2),
+(   '/assets/images/food/dose_bestpet.jpg', 'Bestpet', 10.20, 10, 'CANNED', 2),
+(   '/assets/images/food/liquidroyalCanin.jpg', 'Royal canin', 12.99, 10, 'LIQUID_FOOD', 2),
+(   '/assets/images/food/multi-vitamins.jpg','Multi-Vitamin', 6.99, 100, 'VITAMINS', 2),
+(   '/assets/images/food/reavet_immunvital.jpg',  'Reavet Immunvital', 5.99, 100, 'VITAMINS', 2),
+(   '/assets/images/food/vitamin_d.jpg', 'Vitamin_d', 2.99,  85, 'VITAMINS', 2);
+
+
+ 

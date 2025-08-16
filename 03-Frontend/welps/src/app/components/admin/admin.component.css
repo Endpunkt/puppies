@@ -1,0 +1,204 @@
+
+html, body {
+    overflow-x: hidden;
+}
+
+app-admin{
+    width: 100%;
+    
+}
+
+.cont{
+    background-color: aquamarine;
+    width: 100%;
+    
+    
+ 
+}
+.font-container .description{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+
+
+}
+.font-container .description h5{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 28px;
+}
+.form-container{
+    display: flex;  
+    flex-direction: row;
+    background-color: black;
+    margin: 0 0 100px 0;
+    
+}
+.divider {
+    width: 100%; 
+    border: 1px solid #ccc;
+    margin: 0; 
+    min-width:300px;
+}
+
+.arrow {
+    font-size: 1em; 
+    cursor: pointer; 
+    margin: 0px 0; 
+    
+    color: #fff; 
+    transition: transform 0.3s ease;
+    display: inline-block; 
+    transform-origin: center; 
+}
+.rotate-down {
+    transform: rotate(90deg); 
+  }
+
+legend{
+    border: 0.5px black solid;
+    padding: 10px;
+    width: 250px;
+    height: 40px;
+
+}
+.form-control-sm {
+    
+    min-width: 300px;
+    margin-bottom: 15px;
+    text-align: center; 
+}
+
+.row{
+    overflow: hidden;
+    padding: 20px;
+    margin: auto;
+    height: auto;
+    width: 80%;
+    display:flex;
+    justify-content: space-around;
+}
+
+input[type="file"] {
+    text-align: center; 
+    margin: 0 auto; 
+    display: block; 
+}
+
+label {
+    text-align: center; 
+}
+form{
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    max-width: 380px;
+    background-color:lightblue;
+    padding: 5px;
+    line-height: 16px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+@media(max-width: 765px){
+    a.nav-link {
+        width: 60px;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+@media(max-width:586px) {
+    form{
+        display: flex;
+        flex-direction: column;
+        min-width: 280px;
+       
+        background-color:lightblue;
+        padding: 5px;
+        line-height: 16px;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    .fom-label-sm{
+        margin-left: 5px;
+    }
+    .form-control-sm {
+    
+        min-width: 230px;
+        margin-bottom: 15px;
+        text-align: center; 
+    }
+    .font-container .description h5{
+        margin: 3px;
+        font-size: 16px;
+        height: 20px;
+    }
+
+    input[type="file"] {
+        text-align: center; 
+        font-size: 10px;
+        margin: 0 auto; 
+        display: block; 
+    }
+
+    .form-label-sm{
+        font-size: 12px;
+    }
+    .form-control-sm{
+        min-width: 150px;
+    }
+    legend{
+        width: 170px;
+        font-size: 14px;
+    }
+    .col{
+        flex:none;
+    }
+
+    .row{
+        width: 280px;
+        max-width: 240px;
+    }
+
+    a.nav-link {
+        width: 50px;
+        font-size: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+
+        align-items: left;
+    }
+
+    .checkbox{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+        margin-bottom: 5px;
+    }
+
+    select {
+        text-align: center; /* Zentriert den Text */
+        text-align-last: center; /* Zentriert den ausgewählten Wert */
+        padding-right: 2rem; /* Platz für den Pfeil */
+    }
+
+
+    
+    
+}
