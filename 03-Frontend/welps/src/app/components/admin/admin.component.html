@@ -19,6 +19,10 @@
                             <form   *ngIf="formsVisible[0]" [@slideToggle] #myForm="ngForm" (ngSubmit)="onSubmit()">
                                 <legend>Welpe einfügen:</legend>
                                 <div class="mb-3">
+                                    <label for="name" class="form-label-sm">Name:</label><br/>
+                                    <input type="text" id="name" class="form-control-sm" [(ngModel)]="puppy.name" name="name"/>
+                                </div>
+                                <div class="mb-3">
                                     <label for="height" class="form-label-sm">Höher:</label><br/>
                                     <input type="text" id="height"  class="form-control-sm" [(ngModel)]="puppy.height" name="height"/>
                                 </div>

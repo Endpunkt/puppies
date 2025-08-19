@@ -11,6 +11,7 @@ import jakarta.persistence.AccessType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
@@ -32,7 +33,8 @@ public class Puppy extends Product{
 	@Column(name="characteristic", columnDefinition = "VARCHAR")
 	@Convert(converter= AnimalCharacterConverter.class)
 	private Set<AnimalCharacter> characteristic;
-	@ManyToOne
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="race_id", referencedColumnName = "id")
 	private Breed race;
 	

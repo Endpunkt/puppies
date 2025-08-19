@@ -44,7 +44,7 @@ export class AdminComponent implements OnInit{
   //Form-Methods-----------------------------------
   onSubmit() {
    debugger
-    this.puppy.name = "Welpen";
+    
     
     console.log("itemslength: " + this.itemsLength);
     if(this.itemsLength != undefined) {
