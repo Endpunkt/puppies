@@ -48,7 +48,7 @@ export class AdminComponent implements OnInit{
     
     console.log("itemslength: " + this.itemsLength);
     if(this.itemsLength != undefined) {
-      this.puppy.puppyId = this.itemsLength + 1;
+      this.puppy.id = this.itemsLength + 1;
       console.log("PuppyId: " + this.puppy);
       
     }
@@ -73,7 +73,6 @@ export class AdminComponent implements OnInit{
       // Objekt in JSON-Format umwandeln
       const puppyJson = JSON.stringify({
         id: null,
-        puppyId: this.puppy.puppyId,
         name: this.puppy.name,
         color: this.puppy.color,
         weight: this.puppy.weight,

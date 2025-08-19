@@ -6,7 +6,6 @@ import { Puppy } from "./puppy";
 export class Food {
     constructor( 
                 private _id?: number,
-                private _foodId?: number,
                 private _name?: string, 
                 private _objectName?: string,
                 private _foodType?: FoodType,
@@ -21,8 +20,6 @@ export class Food {
     get id(): number|undefined{    return this._id;     }
     set id(id:number|undefined){   this._id = id;       }
 
-    get foodId(): number| undefined{    return this._foodId;}
-    set foodId(foodId:number| undefined){   this._foodId = foodId;}
 
     get name(): string|undefined{   return this._name;  }
     set name(name: string|undefined){ this._name = name;}

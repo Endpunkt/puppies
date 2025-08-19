@@ -3,7 +3,7 @@
     <div class="dieListe">
      <div *ngIf="puppies && puppies.length > 0" class="einordnung">
             <div class="product-container flex-grow-1  row-cols" *ngFor = "let tempPuppy of puppies">
-                <a class="item-link" routerLink="/puppies/{{tempPuppy.puppyId}}">
+                <a class="item-link" routerLink="/puppies/{{tempPuppy.id}}">
                 <div class="product-item ">
                     <div class="h4-anpassung">{{ tempPuppy.race?.race }} </div>
                     <img src="{{tempPuppy.image}}"  alt="1">
@@ -20,7 +20,7 @@
         </div>
         <div *ngIf="foods && foods.length > 0" class="einordnung">
             <div class="product-container flex-grow-1  row-cols" *ngFor = "let tempFood of foods">
-                <a class="item-link" routerLink="/foods/{{tempFood.foodId}}">
+                <a class="item-link" routerLink="/foods/{{tempFood.id}}">
                     <div class="product-item ">
                         <div class="h4-anpassung">{{ tempFood.objectName }}</div>
                         <img src="{{tempFood.image}}"  alt="1">

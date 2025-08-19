@@ -55,7 +55,7 @@ export class PuppyDetailsComponent {
 
   //-----------------G E T P U P P Y_____(service_call)-----------------------------------
   getPuppy() {
-    const thePuppyId: number = +this._route.snapshot.params['puppyId'];
+    const thePuppyId: number = +this._route.snapshot.params['id'];
     this.serviceCall(thePuppyId);   
   } 
   

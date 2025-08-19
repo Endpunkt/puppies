@@ -6,7 +6,6 @@ import { Bread } from "./bread";
 export class Puppy {
     constructor(
       private _id?: number,
-      private _puppyId?: number,
       private _name?: string,
       private _image?: string,
       private _height?: number,
@@ -20,9 +19,6 @@ export class Puppy {
     
     get id(): number | undefined {  return this._id;            }   
     set id(value: number | undefined) {   this._id = value;     }  
-
-    get puppyId(): number | undefined { return this._puppyId;   }
-    set puppyId(puppyId: number | undefined){   this._puppyId = puppyId;}
   
     get name(): string | undefined{   return this._name;        }
     set name(name: string | undefined){   this._name = name;    }
@@ -52,7 +48,6 @@ export class Puppy {
     toJSON(): object {
       return {
           id: this._id,
-          puppyId: this._puppyId,
           name: this._name,
           image: this._image,
           height: this._height,

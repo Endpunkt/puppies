@@ -222,6 +222,8 @@ app-navbar {
     border-radius: 10px;
 }
 
+
+
 .puppy-navigation-arrows {
     position: absolute;
     bottom: 110px; 
@@ -239,8 +241,13 @@ app-navbar {
     background: black;
 }
 
+.col-md-8{
+        padding-left: 20px;
+}
 
-    
+.col-md-6{
+    padding-left: 10px;
+}
 
  
 .product-item {
@@ -357,7 +364,7 @@ app-header{
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); 
     
 }
-/*_______________________________________________________________________________________________________________________*/
+/**_______________________________________________________________________________________________________________________*/
 
 @media (max-width: 1051px) {
     .product-item{
@@ -373,7 +380,9 @@ app-header{
         background-color:  #e3f2fd;
     }
 
-  
+        .col-md-8{
+        padding-left: 0px;
+    }
 
     
     .puppy-image {
@@ -535,12 +544,15 @@ app-header{
     app-puppy-details{
         width: 100%;
     }
-
+    .col-md-8{
+        padding-left: 20px;
+    }
     .mitte{
         display: flex;
         flex-direction: column;
         justify-content: center;
         justify-items: center;
+        
         
 
     }
