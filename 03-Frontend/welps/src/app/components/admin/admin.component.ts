@@ -7,6 +7,7 @@ import { PuppyService } from '../../services/puppy.service';
 import { ResponseService } from '../../services/response.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Food } from '../../common/food';
 
 @Component({
   selector: 'app-admin',
@@ -22,7 +23,7 @@ import { Observable } from 'rxjs';
 })
 export class AdminComponent implements OnInit{
   
-  
+  food: Food = new Food();
   puppy: Puppy = new Puppy();
   itemsLength: number | undefined;
   selectedFile: File | null = null;
@@ -43,16 +44,16 @@ export class AdminComponent implements OnInit{
 
   //Form-Methods-----------------------------------
   onSubmit() {
-   debugger
+   
     
-    
+    /*
     console.log("itemslength: " + this.itemsLength);
     if(this.itemsLength != undefined) {
       this.puppy.id = this.itemsLength + 1;
       console.log("PuppyId: " + this.puppy);
       
     }
-
+    */
 
     if(this.selectedFile){
       const formData: FormData = new FormData();
@@ -100,8 +101,10 @@ export class AdminComponent implements OnInit{
     }
     console.log(this.puppy);
     console.log(this.itemsLength);
-    debugger
+  
   }
+
+  onSubmit2(){}
 
   onCheckedBox(aCharacter: AnimalCharacter, event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
@@ -155,6 +158,23 @@ export class AdminComponent implements OnInit{
       
     });
   }
+
+
+  //____________________________________ S E C O N D   F O R M U L A R__________________________________
+  onCountInput(event: Event): void {
+  const inputElement = event.target as HTMLInputElement;
+  const value = inputElement.value;
+  
+  const sanitizedValue = value.replace(/[^0-9]/g, '');
+    
+  let count = parseInt(sanitizedValue, 10);
+  if (count > 1000) {
+    count = 0;
+    inputElement.value = '0';
+  }
+
+  this.food.count = parseInt(sanitizedValue, 10) || undefined;
+}
 
 }
 

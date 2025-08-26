@@ -62,12 +62,25 @@ public class PuppyService {
 		return puppyRepository.puppyCount(name);
 	}
 	
+	private Breed findOrCreateBreed(String raceName) {
+	    Optional<Breed> existingBreed = breedRepository.findByRace(raceName);
+	    
+	    if (existingBreed.isPresent()) {
+	        return existingBreed.get();
+	    } else {
+	        Breed newBreed = new Breed();
+	        newBreed.setRace(raceName);
+	        return breedRepository.save(newBreed); // Speichert die neue Rasse und gibt sie zurück
+	    }
+	}
+	
 	@Transactional
 	public void save(PuppyDTO puppyDTO) {
+		Breed breed = findOrCreateBreed(puppyDTO.getRace().getRace().trim().toUpperCase());
+		Category cat = categoryRepository.getReferenceById(1L);
 	    Puppy pup = new Puppy();
-	    
-	    Category cat = categoryRepository.getReferenceById(1L);
 	    pup.setCategory(cat);
+	    
 	    pup.setName(puppyDTO.getName());
 	    pup.setWeight(puppyDTO.getWeight());
 	    pup.setHeight(puppyDTO.getHeight());
@@ -79,25 +92,9 @@ public class PuppyService {
 	    //puppyDTO.getCharacteristic().forEach(ac -> pup.setSingleCharacter(ac));
 	    pup.setColor(puppyDTO.getColor());
 	    
-	    Optional<Breed> maybeBreed = breedRepository.findByRace(puppyDTO.getRace().getRace());
-	    Breed breed;
-	    if (maybeBreed.isPresent()) {
-	        // Die Rasse existiert bereits, verwende das vorhandene Objekt
-	        breed = maybeBreed.get();
-	    } else {
-	        // Die Rasse existiert noch nicht, erstelle ein neues Objekt
-	        breed = new Breed();
-	        breed.setRace(puppyDTO.getRace().getRace());
-	    }
-	     // Setzt die Beziehung von Breed zu ProductObject
-	    breed.setRace(puppyDTO.getRace().getRace());
 	    pup.setRace(breed);  // Setzt die Beziehung von ProductObject zu Breed
 	    puppyRepository.save(pup);
-	    breedRepository.save(breed);  
-
-	    
-	   
-	    
+  
 	}
 }
 

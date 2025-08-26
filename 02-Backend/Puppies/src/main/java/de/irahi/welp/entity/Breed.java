@@ -1,5 +1,6 @@
 package de.irahi.welp.entity;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -31,8 +32,8 @@ public class Breed {
 	private String race;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "race", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Set<Puppy> puppies;
+	@OneToMany(mappedBy = "race", fetch = FetchType.LAZY)
+	private Set<Puppy> puppies = new HashSet<>();
 	
 	@Override
 	public int hashCode() {
