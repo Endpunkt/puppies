@@ -46,18 +46,12 @@ export class AdminComponent implements OnInit{
   onSubmit() {
    
     
-    /*
-    console.log("itemslength: " + this.itemsLength);
-    if(this.itemsLength != undefined) {
-      this.puppy.id = this.itemsLength + 1;
-      console.log("PuppyId: " + this.puppy);
-      
-    }
-    */
+
 
     if(this.selectedFile){
       const formData: FormData = new FormData();
       formData.append('image', this.selectedFile);
+      formData.append('directory', '/welps');
   
       this._response.uploadImage(formData).subscribe({
           next: (response) => {
@@ -104,7 +98,44 @@ export class AdminComponent implements OnInit{
   
   }
 
-  onSubmit2(){}
+  onSubmit2(){
+    if(this.selectedFile){
+      const formData = new FormData();
+      formData.append('image', this.selectedFile);
+      formData.append('directory', '/food');
+    
+      this._response.uploadImage(formData).subscribe({
+            next: (response) => {
+                console.log("Bild erfolgreich hochgeladen", response);
+            },
+            error: (error) => {
+                console.error("Fehler beim Hochladen des Bildes:", error);
+            }
+        });
+      
+
+        this.food.image = "/assets/images/food" + this.selectedFile?.name;
+        const foodJSON = JSON.stringify(this.food);
+
+        this._response.uploadFood(foodJSON).subscribe({
+          next: (response) =>{
+            console.log("Erfolgreich: " + response);
+          },
+          error: (error1) =>{
+            console.log("Fehler: " + error1);
+          }
+        });
+
+        console.log(foodJSON);
+    }else{
+      console.log("Keine Datei ausgewählt!")
+    }
+
+
+
+
+
+  }
 
   onCheckedBox(aCharacter: AnimalCharacter, event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;

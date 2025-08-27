@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import de.irahi.welp.dao.FoodRepository;
 import de.irahi.welp.dto.FoodDTO;
+import de.irahi.welp.entity.Food;
+import jakarta.transaction.Transactional;
 
 @Service
 public class FoodService {
@@ -30,6 +32,19 @@ public class FoodService {
 	
 	public int foodDtoLength(String name) {
 		return foodRepository.foodCount(name);
+	}
+	
+	@Transactional
+	public void save(FoodDTO foodDTO) {
+		Food food = new Food();
+		
+		food.setName(foodDTO.getName());
+		food.setImage(foodDTO.getImage());
+		food.setPrice(foodDTO.getPrice());
+		food.setFoodType(foodDTO.getFoodType());
+		
+		foodRepository.save(food);
+		
 	}
 	
 }

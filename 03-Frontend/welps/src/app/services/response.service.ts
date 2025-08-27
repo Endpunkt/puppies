@@ -21,4 +21,9 @@ export class ResponseService {
     return this.http.post<any>(`${this.uploadUrl}/image`, formData);
   }
 
+  uploadFood(food: any): Observable<any>{
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post(`${this.uploadUrl}/addFood`, food, {headers});
+  }
+
 }
