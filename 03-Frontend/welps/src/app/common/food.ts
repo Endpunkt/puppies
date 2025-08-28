@@ -7,7 +7,6 @@ export class Food {
     constructor( 
                 private _id?: number,
                 private _name?: string, 
-                private _objectName?: string,
                 private _foodType?: FoodType,
                 private _image?: string,
                 private _count?: number,
@@ -23,9 +22,6 @@ export class Food {
 
     get name(): string|undefined{   return this._name;  }
     set name(name: string|undefined){ this._name = name;}
-
-    get objectName(): string|undefined{ return this._objectName;    }
-    set objectName(name: string|undefined){ this._objectName = name;}
 
     get count(): number|undefined{  return this._count;     }
     set count(count: number|undefined){ this._count=count;  }

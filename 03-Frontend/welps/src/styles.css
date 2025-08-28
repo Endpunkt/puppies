@@ -4,7 +4,7 @@ html, body {
     height: 100%;
     margin: 0;
 }
-roots {
+.roots {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -35,7 +35,11 @@ ul li a {
     flex: 1;
 }
 footer{
-    position: fixed;
+    
+    flex-shrink: 0; /* Verhindert, dass der Footer schrumpft */
+    
+    background-color: #343a40;
+    color: white;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -401,9 +405,21 @@ app-header{
         justify-content: center;
         justify-items: center;
     }
+    .horizont{
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+    .mitte{
+        padding: 0 20px;
+    }
+
+
 
     .puppy-detail-container {
-        height: auto;
+        /* Vorher: height: auto; */
+        min-height: 600px; /* Oder ein passender Wert */
         width: 500px;
         margin: 0 auto;
         padding: 5px; 

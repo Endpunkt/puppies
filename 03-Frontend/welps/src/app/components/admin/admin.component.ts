@@ -114,8 +114,16 @@ export class AdminComponent implements OnInit{
         });
       
 
-        this.food.image = "/assets/images/food" + this.selectedFile?.name;
-        const foodJSON = JSON.stringify(this.food);
+        this.food.image = "/assets/images/food/" + this.selectedFile?.name;
+        const foodJSON = JSON.stringify({
+          id :      null,
+          name:     this.food.name,
+          image:    this.food.image,
+          foodType: this.food.foodType,
+          count:    this.food.count,
+          price:    this.food.price
+
+        });
 
         this._response.uploadFood(foodJSON).subscribe({
           next: (response) =>{

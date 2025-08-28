@@ -18,6 +18,7 @@ public class FoodDTO {
 	private int count;
 	private BigDecimal price;
 	
+	public FoodDTO() {}
 	public FoodDTO(long id, String name, FoodType foodType, String image, int count, BigDecimal price) {
 		this.id = id;
 		this.name = name;

@@ -22,7 +22,7 @@
             <div class="product-container flex-grow-1  row-cols" *ngFor = "let tempFood of foods">
                 <a class="item-link" routerLink="/foods/{{tempFood.id}}">
                     <div class="product-item ">
-                        <div class="h4-anpassung">{{ tempFood.objectName }}</div>
+                        <div class="h4-anpassung">{{ tempFood.name }}</div>
                         <img src="{{tempFood.image}}"  alt="1">
                     
                         <hr>
