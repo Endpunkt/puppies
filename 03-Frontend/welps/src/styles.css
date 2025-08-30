@@ -37,7 +37,7 @@ ul li a {
 footer{
     
     flex-shrink: 0; /* Verhindert, dass der Footer schrumpft */
-    
+    position: fixed;
     background-color: #343a40;
     color: white;
     bottom: 0;
@@ -74,6 +74,7 @@ a.navbar-brand{
     display: flex;
     flex-direction: column; 
     justify-content: space-between; 
+    background-color: #e3f2fd;
 }
 
 .list-group-item{
@@ -368,6 +369,16 @@ app-header{
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); 
     
 }
+.mitte{
+    width: 150px;
+}
+
+.horizont{
+        display: flex;
+        flex-direction: row;
+        width: 530px;
+        
+    }
 /**_______________________________________________________________________________________________________________________*/
 
 @media (max-width: 1051px) {
@@ -390,12 +401,16 @@ app-header{
 
     
     .puppy-image {
-        width: 180px;
+        width: 200px;
          
-        height: auto;
+        height: 400px;
         object-fit: contain; 
         border-radius: 10px; 
         background: black;
+          
+        
+
+    
     }
 
     .reihe{
@@ -408,6 +423,7 @@ app-header{
     .horizont{
         display: flex;
         flex-direction: row;
+        
         
     }
 
@@ -485,6 +501,11 @@ app-header{
     .puppy-detail-container{
         width: 80%;
         min-width: 300px;
+                min-height: 600px; /* Oder ein passender Wert */
+        margin: 0 auto;
+        padding: 5px; 
+        background-color: #e3f2fd;
+        border-radius: 10px;
     }
 
     a.item-link{
@@ -590,7 +611,12 @@ app-header{
     }
 
     .puppy-image{
-        margin: 0 auto;
+        
+        width: 100%; /* Erlaubt dem Bild, sich an die Breite seines Elternteils anzupassen */
+        height: 400px; /* Feste Höhe, die du beibehalten wolltest */
+        object-fit: contain; /* Passt das gesamte Bild in den Container */
+        border-radius: 10px;
+        background: black; 
     }
 
     .puppy-navigation-arrows a{
@@ -605,11 +631,28 @@ app-header{
         padding: 0px;
     }
 
-    .reihe{
-        
-        margin-bottom: 150px;
+    .col-md-4{
+        align-items: center;
     }
 
+    .reihe{
+        padding: 0;
+        margin-bottom: 150px;
+        align-items: center;
+    }
+
+       .horizont{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+      
+        
+    }
+
+    .mitte{
+        align-items: center;
+        width: 300px;
+    }
 
 
 }
@@ -634,14 +677,20 @@ app-header{
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .distanz{
-        width: 60%;
-    }
+   
     footer{
-        height: 300px;
+        height: 200px;
         
     }
 
+    .distanz{
+        margin-bottom: 20%;
+        bottom: 100px;
+        padding: 0px;
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+    }
 
     .content-container{
         min-height: 2800px;
@@ -653,6 +702,21 @@ app-header{
 
     .puppy-detail-container{
         margin-bottom: 200px;
+    }
+
+    .horizont{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+      
+        
+    }
+
+    .mitte{
+        align-items: center;
+    }
+    .col-md-4{
+        align-items: center;
     }
  
 
