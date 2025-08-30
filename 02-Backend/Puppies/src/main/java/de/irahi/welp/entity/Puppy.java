@@ -8,6 +8,7 @@ import de.irahi.welp.component.AnimalCharacterConverter;
 import de.irahi.welp.props.AnimalCharacter;
 import jakarta.persistence.Access;
 import jakarta.persistence.AccessType;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
@@ -34,7 +35,8 @@ public class Puppy extends Product{
 	@Convert(converter= AnimalCharacterConverter.class)
 	private Set<AnimalCharacter> characteristic;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name="race_id", referencedColumnName = "id")
 	private Breed race;
 	

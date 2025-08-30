@@ -21,8 +21,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import de.irahi.welp.dto.FoodDTO;
 import de.irahi.welp.dto.PuppyDTO;
+import de.irahi.welp.service.FoodService;
 import de.irahi.welp.service.PuppyService;
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -31,6 +32,9 @@ public class ResponseController {
 	
 	@Autowired 
 	private PuppyService puppyService;
+	
+	@Autowired
+	private FoodService foodService;
 	
 	@PostMapping(value="/addPuppy")
 	public ResponseEntity<Map<String, String>> addPuppy(@RequestBody PuppyDTO puppyDTO) {
@@ -48,14 +52,29 @@ public class ResponseController {
 				
 	}
 	
+	@PostMapping(value="/addFood")
+	public ResponseEntity<Map<String, String>> addFood(@RequestBody FoodDTO foodDTO){
+		Map<String, String> responseVariable = new HashMap<>();
+		try {
+			foodService.save(foodDTO);
+			responseVariable.put("message", "Objekt erfolgreich gespeichert!");
+			
+			return ResponseEntity.ok(responseVariable);
+		}catch(Exception e) {
+			responseVariable.put("error", "Konnte nicht gespeichert werden!");
+		}
+		return ResponseEntity.ok(responseVariable);
+	}
+	
+	
 	@PostMapping("/image")
-	public ResponseEntity<Map<String, String>> saveImage(@RequestParam("image") MultipartFile file){
+	public ResponseEntity<Map<String, String>> saveImage(@RequestParam("image") MultipartFile file, @RequestParam("directory") String directory){
 		
-		String uploadDirectory = "../../03-Frontend/welps/src/assets/images/welps";
-		File directory = new File(uploadDirectory);
+		String uploadDirectory = "../../03-Frontend/welps/src/assets/images" + directory;
+		File directoryLink = new File(uploadDirectory);
 		Map<String, String> responseVariable = new HashMap<>();
 		responseVariable.put("message", "Die Anfrage war erfolgreich");
-		if(directory.exists()) { System.out.println("Verzeichnis vorhanden!----------------------------------------------------------------------");}
+		if(directoryLink.exists()) { System.out.println("Verzeichnis vorhanden!----------------------------------------------------------------------");}
 		else {System.out.println("Verzeichnis ist nicht vorhanden!---------------------------------------------------------------------------");}
 		String filePath = Paths.get(uploadDirectory,file.getOriginalFilename() ).toString();
 		try {

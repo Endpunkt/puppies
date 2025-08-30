@@ -2,22 +2,28 @@
     <div class="puppy-card shadow-sm">
         <div class="reihe g-0">
             <!-- Bild des Welpen -->
-            <div class="col-md-4 mitte">
-                <img src="{{puppy.image}}" class="puppy-image img-fluid" alt="Puppy image">
-            </div>
-            <!-- Details des Welpen -->
-            <div class="col-md-8 ">
-                <div class="puppy-details-body mitte">
-                    <!-- Rasse des Welpen -->
-                    <h5 class="puppy-title">{{ puppy.race?.race }}</h5>
-                    
-                    <!-- Charaktereigenschaften -->
-                    <p class="puppy-characteristics-label fw-bold">Charaktereigenschaften: </p>
-                    <ul *ngIf="puppy" class="puppy-characteristics list-group list-group-flush">
-                        <li *ngFor="let prop of puppy.characteristic" class="list-group-item">
-                            {{ prop }}
-                        </li>
-                    </ul>
+                <div class="horizont">
+                    <div class="col-md-5">
+
+                        <img src="{{puppy.image}}" class="puppy-image " alt="Puppy image">
+                    </div>
+                    <!-- Details des Welpen -->
+                    <div class="col-md-8 ">
+                        <div class="puppy-details-body mitte">
+                            <!-- Rasse des Welpen -->
+                            <h5 class="puppy-title">{{ puppy.race?.race }}</h5>
+                            
+                            <!-- Charaktereigenschaften -->
+                            <p class="puppy-characteristics-label fw-bold">Charaktereigenschaften: </p>
+                            <ul *ngIf="puppy" class="puppy-characteristics list-group list-group-flush">
+                                <li *ngFor="let prop of puppy.characteristic" class="list-group-item">
+                                    {{ prop }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
 
                     <!-- Weitere Details -->
                     <div class="puppy-additional-details mt-3">
@@ -32,8 +38,8 @@
                         <a [routerLink]="['/puppy', prevId]"><i class="fas fa-arrow-left fa-5x"></i></a>
                         <a [routerLink]="['/puppy', nextId]"><i class="fas fa-arrow-right fa-5x"></i></a>
                     </div>
-                </div>
-            </div>
+                
+            
         </div>
     </div>
 </div>

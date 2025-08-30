@@ -1,0 +1,18 @@
+    
+    
+@media (max-width: 470px) {
+    
+    .reihe {
+        padding: 0;
+        margin-bottom: 150px;
+        align-items: center;
+        
+        
+    }
+
+    .food-container{
+        height: 100vh;
+        margin-bottom: 200px;
+        
+    }
+}
