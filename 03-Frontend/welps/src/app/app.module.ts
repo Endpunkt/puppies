@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PuppyDetailsComponent } from './components/puppy/puppy-details.component';
 import { FoodDetailsComponent } from './components/food/food-details.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { HomeComponent } from './start/home/home.component';
 
 
 
@@ -22,6 +23,8 @@ import { AdminComponent } from './components/admin/admin.component';
 
 
 const rout: Routes = [
+  {path: 'start', component: HomeComponent},
+  {path: 'galerie', component: ItemMenuListComponent },
   {path: 'admin', component: AdminComponent},
   {path: 'food/:foodId', component: FoodDetailsComponent},
   {path: 'foods/:foodId', component: FoodDetailsComponent},
@@ -31,7 +34,7 @@ const rout: Routes = [
   {path: 'category/:id', component: ItemMenuListComponent},
   {path: 'category', component: ItemMenuListComponent},
   {path: 'search', component: ItemMenuListComponent},
-  { path: '', redirectTo: 'puppies', pathMatch: 'full' }
+  { path: '', redirectTo: 'start', pathMatch: 'full' }
 ]
 
 @NgModule({
@@ -44,7 +47,8 @@ const rout: Routes = [
     FooterComponent,
     PuppyDetailsComponent,
     FoodDetailsComponent,
-    AdminComponent 
+    AdminComponent,
+    HomeComponent 
   ],
   imports: [
     BrowserModule,
