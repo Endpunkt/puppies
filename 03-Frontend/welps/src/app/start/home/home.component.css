@@ -1,0 +1,60 @@
+
+app-home{
+    max-width: 1200px;
+}
+
+
+/* Stil für die Überschrift */
+.hero-section h1 {
+    font-size: 3.5rem; /* Größer für Desktop */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Stil für den Untertitel */
+.hero-section p.lead {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+.content-container {
+   
+   
+}
+
+.product-container{
+    max-width: 1200px;
+    min-width: 500px;
+     width: 100%;
+    /* Stellt sicher, dass der Container mindestens die volle Höhe des Viewports hat */
+    height: 670px;
+    
+    margin: 0 5%;
+    
+    /* Setzt das Hintergrundbild */
+    background: url('/assets/images/hintegrundsbild.jpg') no-repeat center center/cover;
+    
+    /* Fügt eine dunkle Überlagerung hinzu, um den Text besser lesbar zu machen */
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: overlay;
+
+    /* Für die Ausrichtung des Inhalts mit Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Stellt sicher, dass das Element über die gesamte Seite geht */
+    margin-top: -56px; /* Korrigiert den Abstand, falls du eine feste Navigationsleiste hast */
+}
+
+/* Passt die Schriftgröße auf kleineren Geräten an */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+        width: 1000px;
+    }
+    .hero-section p.lead {
+        font-size: 1.2rem;
+    }
+}

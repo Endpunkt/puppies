@@ -1,23 +1,35 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ItemMenuListComponent } from './components/item-menu-list/item-menu-list.component';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  showNavbar: boolean = false; 
+export class AppComponent implements OnInit {
+  showNavbar: boolean = false;
   title = 'welps';
-  
- 
-  
-  constructor(private _router: Router){
-    this._router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        // Prüfe, ob die Route "/admin" ist
-        this.showNavbar = event.url !== '/admin';
+
+  // Der Konstruktor ist jetzt sauber und wird nur für die Abhängigkeitsinjektion verwendet.
+  constructor(private _router: Router) { } 
+
+ngOnInit() {
+  this._router.events
+    .pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    )
+    .subscribe((event: NavigationEnd) => {
+      const url = event.urlAfterRedirects.split('?')[0];
+
+      // Liste der Pfade, auf denen die Navbar angezeigt werden soll
+      const navPaths = ['/galerie', '/food', '/puppy', '/puppies', '/foods', '/category', '/search'];
+
+      // Überprüfe, ob die URL mit einem der Pfade im Array beginnt
+      if (navPaths.some(path => url.startsWith(path))) {
+        this.showNavbar = true;
+      } else {
+        this.showNavbar = false;
       }
     });
   }
