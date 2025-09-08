@@ -1,0 +1,117 @@
+
+
+/* Globale Stile für alle Bildschirmgrößen */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-me-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    
+}
+.text-content h2{
+    text-align: center;
+}
+
+.about-me-section .container {
+    max-width:max-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Standardmäßig alle Elemente untereinander */
+    gap: 20px;
+}
+
+.about-me-section .container .text-content h2 {
+    font-size: 1.8rem;
+    color: #4CAF50; /* Passende Farbe für dein Thema */
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.about-me-section p {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.about-me-section .image-content img {
+    width: 300px;
+    height: auto;
+    
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-content{
+    
+    margin: 0;
+   
+}
+
+
+
+
+/* 370px: Leichte Anpassung für kleine Smartphones */
+@media(min-width: 370px) {
+    .about-me-section h2 {
+        font-size: 2rem;
+    }
+    .about-me-section p {
+        font-size: 1.05rem;
+    }
+}
+
+/* 520px: Bessere Lesbarkeit auf größeren Handys */
+@media(min-width: 520px) {
+    .about-me-section .text-content {
+        padding: 5px 15px; /* Innenabstand für Text */
+    }
+}
+
+/* 786px: Layout für Tablets - Text und Bild nebeneinander */
+@media(min-width: 786px) {
+    .about-me-section .container {
+        flex-direction: column; /* Elemente in einer Reihe anordnen */
+        align-items: center; /* Vertikal zentrieren */
+    }
+    
+
+    .about-me-section .text-content {
+        flex: 1; /* Nimmt den restlichen Platz ein */
+        padding: 0;
+    }
+
+    .about-me-section .image-content {
+        flex-basis: 3%; /* Das Bild nimmt 40% der Breite ein */
+        
+    }
+
+    .about-me-section h2 {
+        text-align: left; /* Überschrift links ausrichten */
+    }
+}
+
+/* 1051px: Layout für Desktops - größere Schrift und Abstände */
+@media(min-width: 1051px) {
+    .about-me-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-me-section p {
+        font-size: 1.15rem;
+    }
+}
+
+/* Fullscreen: Optimierung für sehr große Bildschirme (optional) */
+@media(min-width: 1200px) {
+    .about-me-section .container {
+        padding: 0 50px;
+    }
+}
