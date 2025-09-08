@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,10 @@ import { PuppyDetailsComponent } from './components/puppy/puppy-details.componen
 import { FoodDetailsComponent } from './components/food/food-details.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './start/home/home.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutmeComponent } from './aboutme/aboutme.component';
+
+
 
 
 
@@ -25,6 +29,8 @@ import { HomeComponent } from './start/home/home.component';
 const rout: Routes = [
   {path: 'start', component: HomeComponent},
   {path: 'galerie', component: ItemMenuListComponent },
+  {path: 'contact', component: ContactComponent},
+  {path: 'aboutme', component: AboutmeComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'food/:foodId', component: FoodDetailsComponent},
   {path: 'foods/:foodId', component: FoodDetailsComponent},
@@ -48,7 +54,9 @@ const rout: Routes = [
     PuppyDetailsComponent,
     FoodDetailsComponent,
     AdminComponent,
-    HomeComponent 
+    HomeComponent,
+    ContactComponent,
+    AboutmeComponent 
   ],
   imports: [
     BrowserModule,
@@ -60,7 +68,10 @@ const rout: Routes = [
   ],
 
   exports: [RouterModule],
-  providers: [PuppyService,provideHttpClient()],
+  providers: [
+    PuppyService,provideHttpClient(),
+    provideHttpClient(withInterceptorsFromDi())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

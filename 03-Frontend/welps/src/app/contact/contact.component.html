@@ -1,0 +1,31 @@
+<div class="contactfeld">
+        <div class="contact-container">
+        <h2>FÜr Rückmeldung </h2>
+        <form (ngSubmit)="sendEmail2(form)" #form="ngForm" >
+            <div class="form-group">
+            <label for="user_name">Dein Name:</label>
+            <input type="text" id="user_name" name="user_name" ngModel required>
+            </div>
+
+            <div class="form-group">
+            <label for="user_email">Deine E-Mail:</label>
+            <input type="email" id="user_email" name="user_email" ngModel required>
+            </div>
+
+            <div class="form-group">
+            <label for="message">Deine Nachricht:</label>
+            <textarea  id="message" name="message" ngModel required></textarea>
+            </div>
+
+            <button type="submit" [disabled]="!form.valid">Senden</button>
+            
+        </form>
+        
+        <div *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+        </div>
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
+        </div>
+</div>
